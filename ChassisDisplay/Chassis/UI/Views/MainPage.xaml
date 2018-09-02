@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="Chassis.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:Chassis.UI.ViewModels"
+    xmlns:controls="using:Chassis.UI.Controls"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance viewModels:MainViewModel, d:IsDesignTimeCreatable=False}">
+
+    <Grid Background="#0000ff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="{StaticResource BottomHeight}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel 
+            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            Margin="50, 0, 0, 0" 
+            Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource NakedButton}">
+                    <Setter Property="Margin" Value="55"/>
+                    <Setter Property="Width" Value="{StaticResource MainButtonWidth}"/>
+                    <Setter Property="Height" Value="{StaticResource MainButtonHeigth}"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button Command="{Binding BrakingCommand}">
+                <StackPanel>
+                    <Image Source="../../Resources/MainPage/BrakingButton.PNG"/>
+                    <TextBlock 
+                        Style="{StaticResource MainButtonText}"
+                        HorizontalTextAlignment="Center"
+                        x:Uid="buttonBrakingText"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding SteeringCommand}">
+                <StackPanel>
+                    <Image Source="../../Resources/MainPage/SteeringButton.PNG"/>
+                    <TextBlock 
+                        Style="{StaticResource MainButtonText}"
+                        HorizontalTextAlignment="Center"
+                        x:Uid="buttonSteeringText"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding AirConditioningCommand}">
+                <StackPanel>
+                    <Image Source="../../Resources/MainPage/AirconditioningButton.PNG"/>
+                    <TextBlock 
+                        Style="{StaticResource MainButtonText}"
+                        HorizontalTextAlignment="Center"
+                        x:Uid="buttonAirConditioningText"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding IgnitionCommand}">
+                <StackPanel>
+                    <Image Source="../../Resources/MainPage/IgnitionButton.PNG"/>
+                    <TextBlock 
+                        Style="{StaticResource MainButtonText}"
+                        HorizontalTextAlignment="Center"
+                        x:Uid="buttonIgnitionText"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <controls:BulletText Grid.Row="2" Grid.Column="0" Text="Discs"/>
+        <controls:NavigationControl
+            Grid.Row="2" Grid.Column="0"
+            ShowNavigation="False"/>
+
+        <controls:CompanyNameControl
+            Grid.Row="2" Grid.Column="1"
+            TextColor="White"/>
+    </Grid>
+</Page>

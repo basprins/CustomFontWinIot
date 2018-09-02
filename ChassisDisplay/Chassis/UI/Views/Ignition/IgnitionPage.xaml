@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="Chassis.UI.Views.Ignition.IgnitionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:Chassis.UI.ViewModels"
+    xmlns:controls="using:Chassis.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    d:DataContext="{d:DesignInstance viewModels:IgnitionViewModel}">
+
+    <Grid Background="#0000ff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{StaticResource TopHeight}"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="{StaticResource BottomHeight}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock 
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+            Margin="60, 100, 0, 0"
+            Style="{StaticResource Title}"
+            x:Uid="titleBraking"/>
+
+        <StackPanel 
+            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            Margin="60, 0, 0, 0"
+            Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource NakedButton}">
+                    <Setter Property="Margin" Value="10"/>
+                    <Setter Property="Width" Value="130"/>
+                    <Setter Property="Height" Value="150"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button Command="{Binding IgnitionCoilsCommand}">
+                <StackPanel>
+                    <Image Source="../../../Resources/IgnitionPage/IgnitionCoils.png"/>
+                    <TextBlock 
+                        HorizontalTextAlignment="Center"
+                        x:Uid="buttonIgnitionCoilsText"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding FuelPumpCommand}">
+                <StackPanel>
+                    <Image Source="../../../Resources/IgnitionPage/FuelPump.png"/>
+                    <TextBlock 
+                        HorizontalTextAlignment="Center"
+                        x:Uid="buttonFuelPumpText"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding InjectorsCommand}">
+                <StackPanel>
+                    <Image Source="../../../Resources/IgnitionPage/Injectors.png"/>
+                    <TextBlock 
+                        HorizontalTextAlignment="Center"
+                        x:Uid="buttonIgnitionText"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <controls:NavigationControl 
+            Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+            ShowNavigation="True"/>
+
+        <controls:CompanyNameControl
+            Grid.Row="2" Grid.Column="1"
+            TextColor="White"/>
+    </Grid>
+</Page>
