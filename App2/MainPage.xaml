@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="App2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <StackPanel>
+            <TextBlock Text="This is Delphi Soleto Bold" FontFamily="/Assets/Delphi-Soleto_Bd.ttf#Delphi-Soleto" />
+            <TextBlock Text="This is Delphi Soleto Bold Light" FontFamily="Assets/Delphi-Soleto_Bdlt.ttf#Delphi-Soleto"/>
+            <TextBlock Text="This is Delphi Soleto Black" FontFamily="Assets/Delphi-Soleto_Blk.ttf#Delphi-Soleto" />
+            <TextBlock Text="This is Delphi Soleto Black Light" FontFamily="Assets/Delphi-Soleto_Blklt.ttf#Delphi-Soleto" />
+            <TextBlock Text="This is Delphi Soleto lt" FontFamily="Assets/Delphi-Soleto_lt.ttf#Delphi-Soleto"/>
+            <TextBlock Text="This is Delphi Soleto Light" FontFamily="Assets/Delphi-Soleto_Lt.ttf#Delphi-Soleto" />
+            <TextBlock Text="This is Delphi Soleto Light lt" FontFamily="Assets/Delphi-Soleto_Ltlt.ttf#Delphi-Soleto"/>
+            <TextBlock Text="This is Delphi Soleto Regular" FontFamily="Assets/Delphi-Soleto_Rg.ttf#Delphi-Soleto" />
+            <TextBlock Text="This is Delphi Soleto Thin" FontFamily="Assets/Delphi-Soleto_Th.ttf#Delphi-Soleto "/>
+            <TextBlock Text="This is Delphi Soleto Thin Light" FontFamily="Assets/Delphi-Soleto_Thlt.ttf#Delphi-Soleto"/>
+
+        </StackPanel>
+    </Grid>
+</Page>
